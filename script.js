@@ -11,7 +11,7 @@ function getDogImage(){
   });
 }
 
-/*
+
 function displayResults(responseJson) {
   console.log(responseJson);
   $('.results-img').replaceWith(
@@ -19,7 +19,7 @@ function displayResults(responseJson) {
   )
   $('.results').removeClass('hidden');
 }
-*/
+
 
 function watchForm() {
   getDogImage();
