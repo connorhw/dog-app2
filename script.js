@@ -15,9 +15,9 @@ function getDogImage(){
 function displayResults(responseJson) {
   console.log(responseJson);
 
-  for (let i=0; i<=responseJson.length-1; i++){
-    $('.results-img').append(
-      `<img src="${responseJson[i].message}" class="results-img">`
+  for (let i=0; i<=responseJson.message.length-1; i++){
+    $('.dogs').append(
+      `<img src="${responseJson.message[i]}" class="results-img">`
     )
   }
   $('.results').removeClass('hidden');
