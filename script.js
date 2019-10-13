@@ -13,17 +13,17 @@ function getDogImage(){
 
 function displayResults(responseJson) {
   console.log(responseJson);
-
   for (let i=0; i<=responseJson.message.length-1; i++){
     $('.dogs').append(
       `<img src="${responseJson.message[i]}" class="results-img">`
     )
   }
   $('.results').removeClass('hidden');
+ 
 }
 
 function clearDOM() {
-  $('#dog-form').clear();
+  $('.results').clear();
 }
 /*
 function restartQuiz() {
@@ -43,7 +43,6 @@ function restartQuiz() {
 
 function watchForm() {
   getDogImage();
-  clearDOM();
 };
 
 $(function() {
