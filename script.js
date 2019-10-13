@@ -10,36 +10,20 @@ function getDogImage(){
   });
 }
 
-
 function displayResults(responseJson) {
   console.log(responseJson);
+  clearDOM();
   for (let i=0; i<=responseJson.message.length-1; i++){
     $('.dogs').append(
       `<img src="${responseJson.message[i]}" class="results-img">`
     )
   }
   $('.results').removeClass('hidden');
- 
 }
 
 function clearDOM() {
-  $('.results').clear();
+  $('.dogs').empty();
 }
-/*
-function restartQuiz() {
-    location.reload(watchForm());
-  
-  $('.submit').replaceWith(
-    `<button type="reset" class="reset">Reset</button>`
-  )
-  watchForm($('.reset').replaceWith(`<button type="submit" class="submit">THESE!</button>`));
-
-  $('.main').on('click', '.submit', function(event) {
-    location.reload(getDogImage());
-  });
-
-}
-*/
 
 function watchForm() {
   getDogImage();
