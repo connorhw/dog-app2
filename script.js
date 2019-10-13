@@ -6,7 +6,8 @@ function getDogImage(){
     var numberOfPics = $('.number-of-dogs-entry').val();
     fetch('https://dog.ceo/api/breeds/image/random/'+ numberOfPics)
       .then(response => response.json())
-      .then(responseJson => displayResults(responseJson));
+      .then(responseJson => displayResults(responseJson))
+      //.catch(numberOfPics < 1 || numberOfPics > 50 => `Invalid input`)
   });
 }
 
