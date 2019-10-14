@@ -4,10 +4,13 @@ function getDogImage(){
   $('#dog-form').submit(function(event){
     event.preventDefault();
     var numberOfPics = $('.number-of-dogs-entry').val();
+    if (numberOfPics < 1 || numberOfPics > 50){
+        alert("Only use numbers 1 through 50, please...");
+    }else{
     fetch('https://dog.ceo/api/breeds/image/random/'+ numberOfPics)
       .then(response => response.json())
       .then(responseJson => displayResults(responseJson))
-      //.catch(numberOfPics < 1 || numberOfPics > 50 => `Invalid input`)
+    }
   });
 }
 
